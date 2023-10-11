@@ -13,3 +13,5 @@ from manager import Manager
 
 man = Manager(...)
 ```
+
+the hierarchy involved in Manager is that it inherits from Employee class, getting components like ......
