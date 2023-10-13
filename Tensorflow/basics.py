@@ -100,12 +100,3 @@ x = tf.reshape(x, (3,3))
 
 # transpose
 x = tf.transpose(x)
-print(x)
-
-
-
-
-
-
-
-
