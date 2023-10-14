@@ -26,8 +26,13 @@ x_test = x_test.reshape(-1, 28*28).astype("float32") / 255.0
 
 """
 model initialization
+1. last layer should contain the number of classification categories
+"""
+
+"""
+Sequential API
 1. use Sequential API (not very flexible, one input one output)
-2. last layer should contain the number of classification categories
+2. change loss from_logits argument to True
 """
 model = keras.Sequential(
     [
@@ -44,6 +49,20 @@ model_alt.add(keras.Input(shape=(28*28)))
 model_alt.add(layers.Dense(512, activation="relu"))
 model_alt.add(layers.Dense(256, activation="relu"))
 model_alt.add(layers.Dense(10))
+
+"""
+Functional API
+1. more flexible, multiple inputs multiple outputs
+2. add the previous layer to the current layer as input
+3. in outputs, define activation function
+4. change loss from_logits argument to False
+"""
+inputs = keras.Input(shape=(28*28))
+x = layers.Dense(512, activation="relu")(inputs)
+x = layers.Dense(256, activation="relu")(x)
+outputs = layers.Dense(10, activation="softmax")(x)
+model = keras.Model(inputs=inputs, outputs=outputs)
+
 
 """
 model summary:
