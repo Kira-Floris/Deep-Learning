@@ -5,3 +5,7 @@ The purpose of adding regularization techniques, is to reduce the model from ove
 Some of those techniques can be found in:
 1. l2 regularization: 4_CNN_functional.py
 2. dropout: 4_CNN_functional.py
+
+## Course Sources:
+1. TensorFlow 2.0 Beginner Tutorials by Aladdin Persson : https://youtube.com/playlist?list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb&si=bUcpLOQsi3zU1L5A
+ 
