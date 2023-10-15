@@ -25,6 +25,7 @@ x_test = x_test.reshape(-1, 28*28).astype("float32") / 255.0
 """
 model1 = keras.Sequential(
     [
+        keras.Input(shape=(28*28)),
         layers.Dense(64, activation="relu"),
         layers.Dense(10)
     ]
