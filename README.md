@@ -1,3 +1,3 @@
 # Deep-Learning
 
-This is a repository for learning the basics about Deep Learning using Tensoflow
+This is a repository for learning the basics about Deep Learning using Tensorflow

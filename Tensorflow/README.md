@@ -9,6 +9,9 @@ Some of those techniques can be found in:
 ## Model Subclassing
 The purpose of model subclassing is to create a class which is reusable across layers. The code can be found at 9_model_subclassing.py
 
+## Custom Model, Dense Layer and Relu
+Can be found in 10_custom_layers.py
+
 ## Course Sources:
 1. TensorFlow 2.0 Beginner Tutorials by Aladdin Persson : https://youtube.com/playlist?list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb&si=bUcpLOQsi3zU1L5A
  
