@@ -1,0 +1,7 @@
+tensorflow-gpu
+tensorflow-hub
+tensorflow-datasets
+pandas
+numpy
+matplotlib
+protobuf==3.20
