@@ -12,6 +12,10 @@ The purpose of model subclassing is to create a class which is reusable across l
 ## Custom Model, Dense Layer and Relu
 Can be found in 10_custom_layers.py
 
+## Pretrained, Fine Tuning and Layers Freezing
+The purpose of Layer Freezing is to use model layers without training them from scratch. This allows fast training than training them from scratch. The codes can be found in 12_pretrained_model.py .
+It also includes how to fine tune models from tensorflow hub, keras, and other sources like huggingface and github. 
+
 ## Course Sources:
 1. TensorFlow 2.0 Beginner Tutorials by Aladdin Persson : https://youtube.com/playlist?list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb&si=bUcpLOQsi3zU1L5A
  

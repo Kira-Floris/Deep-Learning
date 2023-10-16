@@ -55,4 +55,45 @@ x = tf.random.normal(shape=(5,299,299,3))
 y = tf.constant([0,1,2,3,4])
 
 pretrainedk_model = keras.applications.InceptionV3(include_top=True)
-print(pretrainedk_model)
+# print(pretrainedk_model.summary())
+
+new_n_classes = 5
+base_inputs = pretrainedk_model.layers[0].input
+base_outputs = pretrainedk_model.layers[-2].output
+final_outputs = layers.Dense(new_n_classes)(base_outputs)
+new_pretrainedk_model = keras.Model(inputs=base_inputs, outputs=final_outputs) 
+# print(new_pretrainedk_model.summary())
+
+new_pretrainedk_model.compile(
+    optimizer=keras.optimizers.Adam(),
+    loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"]
+)
+new_pretrainedk_model.fit(x,y,epochs=2, batch_size=32, verbose=2)
+
+"""
+tensorflow hub
+"""
+x = tf.random.normal(shape=(5,299,299,3))
+y = tf.constant([0,1,2,3,4])
+
+url = "https://tfhub.dev/google/imagenet/inception_v3/feature_vector/4"
+
+base_model = hub.KerasLayer(url, input_shape=(299,299,3))
+base_model.trainable = False
+hub_model = keras.Sequential(
+    [
+        base_model,
+        layers.Dense(129,activation="relu"),
+        layers.Dense(64, activation="relu"),
+        layers.Dense(5),
+    ]
+)
+
+hub_model.compile(
+    optimizer=keras.optimizers.Adam(),
+    loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"]
+)
+
+hub_model.fit(x,y,batch_size=32,epochs=10,verbose=2)
