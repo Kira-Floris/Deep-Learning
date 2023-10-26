@@ -1,6 +1,7 @@
-tensorflow-gpu
+# tensorflow-gpu
 tensorflow-hub
 tensorflow-datasets
+tensorflow_text
 pandas
 numpy
 matplotlib
